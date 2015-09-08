@@ -27,6 +27,6 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 ssh() {
-  PULLER_URL="https://gist.githubusercontent.com/ashmckenzie/ef0d536335395cacc75f/raw/06310ab67afb5515cd3573dfc671c6ab0aee54f5/puller.sh"
-  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && wget -q '${PULLER_URL}' -O - | bash - ; tmux a || tmux || /bin/bash'
+  DOTFILES_GIT_REPO="https://github.com/ashmckenzie/dotfiles.git"
+  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && git clone '${DOTFILES_GIT_REPO}' ~/dotfiles ; ln -nfs ~/dotfiles/.* ~/ ; tmux a || tmux
 }
