@@ -1,0 +1,27 @@
+[core]
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
+[user]
+  name = Ash McKenzie
+  email = ash@the-rebellion.net
+[apply]
+  whitespace = nowarn
+[alias]
+  st = status -sb
+  co = checkout
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  wc = whatchanged -p --abbrev-commit --pretty=medium
+  stullr = !git stash -u && git pull -r && git stash pop
+  pullrpush = !git pull -r && git push
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+[difftool]
+  prompt = false
