@@ -27,6 +27,5 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 ssh() {
-  DOTFILES_GIT_REPO="https://github.com/ashmckenzie/dotfiles.git"
-  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && git clone '${DOTFILES_GIT_REPO}' ~/dotfiles ; ln -nfs ~/dotfiles/.* ~/ ; tmux a || tmux
+  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && wget https://github.com/ashmckenzie/dotfiles/archive/master.tar.gz -O - | tar --strip-components=1 -xzvf - ; tmux a || tmux || /bin/bash'
 }
