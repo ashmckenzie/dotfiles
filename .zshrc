@@ -4,7 +4,7 @@ alias ll='ls -la'
 PS1='[%F{green}%n@%F{cyan}%M%f]%f-[%*]-[%F{yellow}%~%f]
 $ '
 
-PATH="${PATH}:/usr/lib64/nagios/plugins"
+PATH="${PATH}:/usr/lib/nagios/plugins:/usr/lib64/nagios/plugins"
 
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE="10000"                   # The maximum number of events to save in the internal history.
