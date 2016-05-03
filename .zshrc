@@ -4,9 +4,11 @@ alias ll='ls -la'
 PS1='[%F{green}%n@%F{cyan}%M%f]%f-[%*]-[%F{yellow}%~%f]
 $ '
 
-HISTFILE=${HOME}/.zsh_history
-HISTSIZE=10000                   # The maximum number of events to save in the internal history.
-SAVEHIST=10000                   # The maximum number of events to save in the history file.
+PATH="${PATH}:/usr/lib64/nagios/plugins"
+
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE="10000"                   # The maximum number of events to save in the internal history.
+SAVEHIST="10000"                   # The maximum number of events to save in the history file.
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
@@ -27,5 +29,5 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 ssh() {
-  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && curl --silent https://codeload.github.com/ashmckenzie/dotfiles/tar.gz/master | tar --strip-components=1 -xzf - ; tmux a || tmux || /bin/bash'
+  /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && curl --silent https://codeload.github.com/ashmckenzie/dotfiles/tar.gz/production | tar --strip-components=1 -xzf - ; tmux a || tmux || /bin/bash'
 }
