@@ -31,3 +31,5 @@ bindkey "^[[F" end-of-line
 ssh() {
   /usr/bin/ssh $* -t '[[ $(hostname) =~ ".*zdsys|zdsystest\.com" ]] && curl --silent https://codeload.github.com/ashmckenzie/dotfiles/tar.gz/production | tar --strip-components=1 -xzf - ; tmux a || tmux || /bin/bash'
 }
+
+[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
