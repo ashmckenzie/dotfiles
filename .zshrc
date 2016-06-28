@@ -1,5 +1,9 @@
+setopt clobber
+
 alias be='bundle exec'
 alias ll='ls -la'
+alias rm='rm -i'
+alias mv='mv -i'
 
 PS1='[%F{green}%n@%F{cyan}%M%f]%f-[%*]-[%F{yellow}%~%f]
 $ '
