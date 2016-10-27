@@ -33,7 +33,7 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 ssh() {
-  /usr/bin/ssh $* -t '[[ $(hostname) =~ \.(zdsys|zdsystest)\.com ]] && curl --silent https://codeload.github.com/ashmckenzie/dotfiles/tar.gz/master | tar --strip-components=1 -xzf - ; tmux a || tmux || /bin/bash'
+  /usr/bin/ssh $* -t '[[ $(hostname) =~ \.(zdsys|zdsystest)\.com ]] && curl --silent https://codeload.github.com/ashmckenzie/dotfiles/tar.gz/master | tar --strip-components=1 -xzf - ; tmux a || tmux new "/usr/bin/zsh -l" || /bin/bash'
 }
 
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
